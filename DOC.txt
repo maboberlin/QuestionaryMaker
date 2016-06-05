@@ -1,0 +1,57 @@
+Documentation of the Questionary-JSON-Datastructure
+---------------------------------------------------
+
+- "questions": first key - value is an array of questions
+
+each question contains:
+- "text": question text
+
+- "answers": value is an array of answers to that questions
+each answer contains:
+- "id": has to be unique for whole questionary
+- "name": optional for designing the question
+- "options": array of strings, each string is a value for that question
+- "multiselect": if one or multiple values can be selected
+
+- "conditions": an array of conditions that this answer will be displayed and counted in the result, each condition has to be fullfilled
+each condition contains:
+- "answer_id": the id of the answer this condition is referencing to
+- "values": the values of this answer that have to be selected so that the condition is fullfilled - multiple values get OR-combined
+
+
+Example:
+{ 	"questions" :
+	[
+		{
+			"text" : "Mit welchem Verkehrsmittel fahren Sie zur Arbeit?",
+			"answers" :
+			[
+				{
+					"id" : 1,
+					"name" : "",
+					"options" : ["Fahrrad", "Auto", "Bus", "zu Fuß", "U-Bahn", "Regionalzug", "keinem von diesen"],
+					"multiselect" : true
+				}
+			]
+		},
+		{
+			"text" : "Welche Fahrscheinarten benutzen Sie hauptsächlich wenn Sie mit öffentlichen Verkehrsmitteln zur Arbeit fahren?",
+			"answers" :
+			[
+				{
+					"id" : 2,
+					"name" : "",
+					"options" : ["Monatskrate", "4-Karte", "Einzelfahrschein", "fahre schwarz", "keine Angabe"],
+					"multiselect" : false
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [2, 4, 5]
+				}
+			]
+		}
+	]
+}

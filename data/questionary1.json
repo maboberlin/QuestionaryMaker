@@ -1,0 +1,92 @@
+{ 	"questions" :
+	[
+		{
+			"text" : "Haben Sie Kinder?",
+			"answers" :
+			[
+				{
+					"id" : 1,
+					"name" : "",
+					"options" : ["ja", "nein"],
+					"multiselect" : false
+				}
+			]
+		},
+		{
+			"text" : "Wie viele Kinder haben Sie?",
+			"answers" :
+			[
+				{
+					"id" : 2,
+					"name" : "",
+					"options" : ["1", "2", "3", "4", "5", "mehr"],
+					"multiselect" : false
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [0]
+				}
+			]
+		},
+		{
+			"text" : "Welche Einrichtungen besuchen ihre Kinder (mehrere Antworten sind möglich)?",
+			"answers" :
+			[
+				{
+					"id" : 3,
+					"name" : "",
+					"options" : ["Kindergarten", "Schule", "Sportverein"],
+					"multiselect" : true
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [0]
+				}
+			]
+		},
+		{
+			"text" : "Wie zufrieden sind Sie mit dem Schulessen in Bezug auf ... ?",
+			"answers" :
+			[
+				{
+					"id" : 4,
+					"name" : "Preis",
+					"options" : ["Sehr zufrieden", "Einigermaßen zufrieden", "Unzufrieden", "Sehr unzufrieden"],
+					"multiselect" : true
+				},
+				{
+					"id" : 5,
+					"name" : "Qualität",
+					"options" : ["Sehr zufrieden", "Einigermaßen zufrieden", "Unzufrieden", "Sehr unzufrieden"],
+					"multiselect" : true
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [0]
+				}
+			]
+		},
+		{
+			"text" : "In welchem Stadtteil wohnen Sie?",
+			"answers" :
+			[
+				{
+					"id" : 6,
+					"name" : "",
+					"options" : ["Mitte", "Friedrichshain-Kreuzberg", "Pankow", "Charlottenburg-Wilmersdorf", "Spandau", "Steglitz-Zehlendorf", "Tempelhof-Schöneberg", "Neukölln", "Treptow-Köpenick", "Marzahn-Hellersdorf", "Lichtenberg", "Reinickendorf"],
+					"multiselect" : false
+				}
+			]
+		}
+	]
+}
+

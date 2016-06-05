@@ -1,0 +1,74 @@
+{ 	"questions" :
+	[
+		{
+			"text" : "Mit welchem Verkehrsmittel fahren Sie zur Arbeit?",
+			"answers" :
+			[
+				{
+					"id" : 1,
+					"name" : "",
+					"options" : ["Fahrrad", "Auto", "Bus", "zu Fuß", "U-Bahn", "Regionalzug", "keinem von diesen"],
+					"multiselect" : true
+				}
+			]
+		},
+		{
+			"text" : "Welche Fahrscheinarten benutzen Sie hauptsächlich wenn Sie mit öffentlichen Verkehrsmitteln zur Arbeit fahren?",
+			"answers" :
+			[
+				{
+					"id" : 2,
+					"name" : "",
+					"options" : ["Monatskrate", "4-Karte", "Einzelfahrschein", "fahre schwarz", "keine Angabe"],
+					"multiselect" : false
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [2, 4, 5]
+				}
+			]
+		},
+		{
+			"text" : "Wie häufig kommen Sie wegen des ÖPNV zu spät auf Arbeit?",
+			"answers" :
+			[
+				{
+					"id" : 3,
+					"name" : "",
+					"options" : ["nie", "fast nie", "gelegentlich", "häufig", "ständig"],
+					"multiselect" : false
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [2, 4, 5]
+				}
+			]
+		},
+		{
+			"text" : "Nutzen Sie dazu ihr eigenes Auto oder einen Dienstwagen?",
+			"answers" :
+			[
+				{
+					"id" : 4,
+					"name" : "",
+					"options" : ["eigenes Auto", "Dienstwagen"],
+					"multiselect" : false
+				}
+			],
+			"conditions" :
+			[
+				{
+					"answer_id" : 1,
+					"values": [1]
+				}
+			]
+		}
+	]
+}
+
